@@ -36,13 +36,7 @@ function App() {
          date={i.date}
          location={i.location}
          />
-      ))}</div>
-      {/* <ExpenseItems 
-      title={expenses[0].title}
-      date={expenses[0].date}
-      amount={expenses[0].amount}
-      /> */}
-      
+      ))}</div> 
     </div>
   );
 }
