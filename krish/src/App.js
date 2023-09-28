@@ -1,4 +1,5 @@
 import ExpenseItems from "./components/ExpenseItems"
+import NewExpenses from "./components/NewExpenses/NewExpenses";
 
 
 const App=()=>{
@@ -28,7 +29,7 @@ const App=()=>{
   return (
     <div>
       
-      <h2>Let's get started!</h2>
+      <NewExpenses />
       <div>{expenses.map(i=>(
          <ExpenseItems 
          id={i.id}
