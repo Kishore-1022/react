@@ -1,7 +1,7 @@
 import ExpenseItems from "./components/ExpenseItems"
 
 
-function App() {
+const App=()=>{
   const expenses=[
     {
     id:1,
@@ -31,6 +31,7 @@ function App() {
       <h2>Let's get started!</h2>
       <div>{expenses.map(i=>(
          <ExpenseItems 
+         id={i.id}
          title={i.title}
          amount={i.amount}
          date={i.date}
@@ -40,5 +41,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
