@@ -26,10 +26,14 @@ const App=()=>{
     location:"mumbai"
    }
   ]
+  const addExpenseHandler=expense=>{
+    console.log('kishore')
+    console.log(expense)
+  }
   return (
     <div>
       
-      <NewExpenses />
+      <NewExpenses  onAddExpense={addExpenseHandler}/>
       <div>{expenses.map(i=>(
          <ExpenseItems 
          id={i.id}

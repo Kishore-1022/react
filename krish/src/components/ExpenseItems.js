@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const ExpenseItems=(props)=>{
   const[amt,setamt]=useState(props.amount);
-  function del(){
+  function reset(){
     setamt(100)
     console.log(amt)
   }
@@ -19,7 +19,7 @@ const ExpenseItems=(props)=>{
            <h2>{props.location}</h2>
            <div className='expense-item__price'>Rs.{amt}</div>
          </div>
-         <button onClick={del}>Reset Amount</button>
+         <button onClick={reset}>Reset Amount</button>
     </Cards>
 
   );
