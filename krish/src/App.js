@@ -34,6 +34,7 @@ const App=()=>{
     <div>
       
       <NewExpenses  onAddExpense={addExpenseHandler}/>
+      
       <div>{expenses.map(i=>(
          <ExpenseItems 
          id={i.id}
