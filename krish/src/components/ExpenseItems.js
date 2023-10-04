@@ -7,8 +7,6 @@ import Cards from './Cards';
 
 const ExpenseItems=(props)=>{
  
-  
-
   return (
     <Cards className='expense-item' key={props.id}>
 

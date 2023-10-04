@@ -2,6 +2,7 @@ import ExpenseItems from "./components/ExpenseItems"
 import NewExpenses from "./components/NewExpenses/NewExpenses";
 import ExpensesFilter from './components/ExpensesFilter';
 import { useState } from "react";
+import ExpensesChart from "./components/ExpensesChart";
 
 const dummyExpenses=[
   {
@@ -41,11 +42,13 @@ const App=()=>{
   const filteredExpenses=expenses.filter(exp=>{
     return exp.date.getFullYear().toString()===filteredYear
   })
+  console.log(filteredExpenses)
   return (
     <div>
       
       <NewExpenses  onAddExpense={addExpenseHandler}/>
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+      <ExpensesChart expenses={filteredExpenses}/>
 
       
         {  filteredExpenses.length===1? 
@@ -65,6 +68,7 @@ const App=()=>{
         </div> 
         : filteredExpenses.length===0 ? 
         <p style={{'text-align': 'center', 'font-weight':'bolder'}}>No expenses found.</p> : filteredExpenses.map(i=>(
+
          <ExpenseItems 
          id={i.id}
          title={i.title}
