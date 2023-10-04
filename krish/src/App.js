@@ -14,14 +14,14 @@ const dummyExpenses=[
  {
   id:2,
   title:'house exp',
-  date:new Date(2021, 2, 29),
+  date:new Date(2022, 2, 29),
   amount:2000,
   location:"Delhi"
  },
  {
   id:3,
   title:'phone exp',
-  date:new Date(2022, 4, 19),
+  date:new Date(2021, 4, 19),
   amount:1500,
   location:"mumbai"
  }
@@ -48,7 +48,22 @@ const App=()=>{
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
 
       
-        { filteredExpenses.length===0 ? 
+        {  filteredExpenses.length===1? 
+        <div>
+          {filteredExpenses.map(i=>(
+         <ExpenseItems 
+         id={i.id}
+         title={i.title}
+         amount={i.amount}
+         date={i.date}
+         location={i.location}
+         />
+         ))}
+        <p style={{'text-align': 'center', 'font-weight':'bolder' ,
+        'color':'black'}}>Only single Expense here.</p>
+           
+        </div> 
+        : filteredExpenses.length===0 ? 
         <p style={{'text-align': 'center', 'font-weight':'bolder'}}>No expenses found.</p> : filteredExpenses.map(i=>(
          <ExpenseItems 
          id={i.id}
